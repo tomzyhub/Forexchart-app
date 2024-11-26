@@ -1,3 +1,4 @@
+import ChartBoardPanel from "./components/ChartBoardPanel";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <>
       <div className="w-full h-full ">
         <NavBar />
+        <ChartBoardPanel />
       </div>
     </>
   );
