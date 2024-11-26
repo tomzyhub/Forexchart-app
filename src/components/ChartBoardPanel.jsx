@@ -7,7 +7,7 @@ const ChartBoardPanel = () => {
 
   useEffect(() => {
     const loadChartData = async () => {
-      const data = await fetchForexData("EUR", "USD");
+      const data = await fetchForexData("USD/JPY");
       setApiData(data);
     };
 
@@ -20,10 +20,36 @@ const ChartBoardPanel = () => {
     const chart = createChart(chartContainerRef.current, {
       width: chartContainerRef.current.offsetWidth,
       height: 400,
+      layout: {
+        backgroundColor: "#ffffff",
+        textColor: "#000000",
+      },
+      grid: {
+        vertLines: {
+          color: "#e1e1e1",
+        },
+        horzLines: {
+          color: "#e1e1e1",
+        },
+      },
+      timeScale: {
+        timeVisible: true, // Ensure time (date/hour) is shown on the x-axis
+        secondsVisible: false, // Disable seconds (optional)
+      },
+      priceScale: {
+        position: "right", // Show price scale on the right
+      },
     });
 
     // Add a candlestick series
-    const candlestickSeries = chart.addCandlestickSeries();
+    const candlestickSeries = chart.addCandlestickSeries({
+      upColor: "#4caf50",
+      downColor: "#f44336",
+      borderDownColor: "#f44336",
+      borderUpColor: "#4caf50",
+      wickDownColor: "#f44336",
+      wickUpColor: "#4caf50",
+    });
 
     // Dummy data (replace with API data later)
     candlestickSeries.setData(ApiData);
@@ -36,7 +62,7 @@ const ChartBoardPanel = () => {
     <>
       <div
         ref={chartContainerRef}
-        className="flex w-5/5 h-5/6 mt-3 border-2 items-center justify-center"
+        className="flex w-5/5 h-max mt-3 border-2 items-center justify-center"
       ></div>
     </>
   );
