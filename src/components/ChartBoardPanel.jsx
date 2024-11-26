@@ -7,7 +7,7 @@ const ChartBoardPanel = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchForexData("GBP/USDF", "5min");
+      const data = await fetchForexData("GBP/JPY", "5min");
       setChartData(data);
     };
 
@@ -19,7 +19,7 @@ const ChartBoardPanel = () => {
       {chartData.length > 0 ? (
         <ChartComponent data={chartData} width={1230} height={500} />
       ) : (
-        <p>Loading chart data...</p>
+        <p className="text-center">Loading chart data...</p>
       )}
     </div>
   );

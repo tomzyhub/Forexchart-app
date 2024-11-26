@@ -26,6 +26,41 @@ const ChartComponent = ({ data, width = 800, height = 400 }) => {
       },
     });
 
+    chart.applyOptions({
+      crosshair: {
+        mode: 0, // Normal crosshair
+        vertLine: {
+          color: "#6A5ACD",
+          width: 1,
+          style: 0,
+        },
+        horzLine: {
+          color: "#6A5ACD",
+          width: 1,
+          style: 0,
+        },
+        layout: {
+          backgroundColor: "#282c34",
+          textColor: "#ffffff",
+        },
+        grid: {
+          vertLines: { color: "#444" },
+          horzLines: { color: "#444" },
+        },
+      },
+    });
+
+    chart.subscribeCrosshairMove((param) => {
+      console.log("Crosshair moved", param);
+    });
+
+    chart.addAreaSeries({
+      topColor: "rgba(33, 150, 243, 0.56)",
+      bottomColor: "rgba(33, 150, 243, 0.04)",
+      lineColor: "rgba(33, 150, 243, 1)",
+      lineWidth: 2,
+    });
+
     // Add a candlestick series
     const candlestickSeries = chart.addCandlestickSeries({
       upColor: "#4caf50",
@@ -40,6 +75,8 @@ const ChartComponent = ({ data, width = 800, height = 400 }) => {
     if (data) {
       candlestickSeries.setData(data);
     }
+    chart.timeScale().scrollToRealTime(); // Scroll to the latest data
+    chart.timeScale().fitContent(); // Fit all candlesticks on the screen
 
     // Cleanup to remove chart instance on unmount
     return () => chart.remove();

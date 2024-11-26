@@ -1,4 +1,4 @@
-const fetchForexData = async (symbol = "GBP/USD", interval = "5min") => {
+const fetchForexData = async (symbol = "GBP/JPY", interval = "5min") => {
     const API_KEY = "5e53ad18bda742719222ea1972328a2b" ;  
     const BASE_URL =  "https://api.twelvedata.com/time_series";
   
