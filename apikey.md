@@ -1,2 +1,0 @@
-apikey: P4EQLFZYY8VLY27J
-twelveData: 5e53ad18bda742719222ea1972328a2b
