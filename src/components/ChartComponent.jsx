@@ -51,7 +51,7 @@ const ChartComponent = ({ data, width = 800, height = 400 }) => {
     });
 
     chart.subscribeCrosshairMove((param) => {
-      console.log("Crosshair moved", param);
+      return param;
     });
 
     chart.addAreaSeries({
