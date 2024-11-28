@@ -1,6 +1,6 @@
 const fetchForexData = async (symbol, timeframe) => {
   const API_KEY = "5yejwYyfeqK7_WtIHZJDqmdE5blsnVOE";
-  const BASE_URL = "https://api.polygon.io/v2/aggs/ticker/C:EURUSD";
+  const BASE_URL = "https://api.polygon.io/v2/aggs/ticker/C:GBPUSD";
   const resolutionMap = {
     "1min": "1/minute",
     "5min": "5/minute",
