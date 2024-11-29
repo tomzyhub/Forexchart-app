@@ -1,13 +1,13 @@
 const fetchForexData = async (symbol, timeframe) => {
   const API_KEY = "5yejwYyfeqK7_WtIHZJDqmdE5blsnVOE";
-  const BASE_URL = "https://api.polygon.io/v2/aggs/ticker/C:GBPUSD";
+  const BASE_URL = "https://api.polygon.io/v2/aggs/ticker/C:EURUSD";
   const resolutionMap = {
     "1min": "1/minute",
     "5min": "5/minute",
     "1h": "1/hour",
     "1d": "1/day",
   };
-  const resolution = resolutionMap[timeframe] || "5/minute";
+  const resolution = resolutionMap[timeframe] || "1/minute";
   const fromDate = new Date();
   fromDate.setDate(fromDate.getDate() - 7); // Fetch data from the last 7 days
   const formattedFrom = fromDate.toISOString().split("T")[0];

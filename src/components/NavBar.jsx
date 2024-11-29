@@ -1,11 +1,11 @@
 import React from "react";
 import TimeframeSelector from "./TimeframeSelector";
 
-const NavBar = ({ timeFrame, setTimeFrame }) => {
+const NavBar = ({ timeframe, setTimeframe }) => {
   return (
     <>
       <div className="w-5/5 h-16 mx-auto flex items-center justify-center border-5 bg-gray-200">
-        <TimeframeSelector timeframe={timeFrame} setTimeframe={setTimeFrame} />
+        <TimeframeSelector timeframe={timeframe} setTimeframe={setTimeframe} />
         {/* <select className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600">
           <option value="eur/usd">eur/usd</option>
           <option value="eur/usd">Nzd/usd</option>
