@@ -21,7 +21,6 @@ const ChartBoardPanel = ({ timeframe }) => {
       ) : (
         <p className="text-center">Loading chart data...</p>
       )}
-      <p>Displaying {timeframe} data</p>
     </div>
   );
 };
