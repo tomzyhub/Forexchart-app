@@ -1,26 +1,16 @@
 import React from "react";
 import TimeframeSelector from "./TimeframeSelector";
+import CurrencySelector from "./CurrencySelector";
 
-const NavBar = ({ timeframe, setTimeframe }) => {
+const NavBar = ({ timeframe, setTimeframe, currencyPair, setCurrencyPair }) => {
   return (
     <>
-      <div className="w-5/5 h-16 mx-auto flex items-center justify-center border-5 bg-gray-200">
+      <div className="w-full h-16 flex items-center justify-between bg-gradient-to-r from-blue-400 to-purple-200 px-4 py-2">
         <TimeframeSelector timeframe={timeframe} setTimeframe={setTimeframe} />
-        {/* <select className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-          <option value="eur/usd">eur/usd</option>
-          <option value="eur/usd">Nzd/usd</option>
-          <option value="eur/usd">Gbp/usd</option>
-          <option value="eur/usd">CHF/usd</option>
-          <option value="eur/usd">btc/usd</option>
-        </select>
-        <select className="px-4 py-2 mx-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-          <option value="eur/usd">1 min</option>
-          <option value="eur/usd">5 min</option>
-          <option value="eur/usd">15 min</option>
-          <option value="eur/usd">30 min</option>
-          <option value="eur/usd">1H</option>
-          <option value="eur/usd">1D</option>
-        </select> */}
+        <CurrencySelector
+          currencyPair={currencyPair}
+          setCurrencyPair={setCurrencyPair}
+        />
       </div>
     </>
   );

@@ -4,19 +4,17 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [timeframe, setTimeframe] = useState("1min");
-
-  // let handleTimeFrameChange = (e) => {
-  //   // timeframe change logic here
-  //   const getValue = e.target.value;
-  //   setTimeframe(getValue);
-  //   console.log(value);
-  // };
-
+  const [currencyPair, setCurrencyPair] = useState("EURUSD");
   return (
     <>
       <div className="w-full h-full ">
-        <NavBar timeframe={timeframe} setTimeframe={setTimeframe} />
-        <ChartBoardPanel timeframe={timeframe} />
+        <NavBar
+          timeframe={timeframe}
+          setTimeframe={setTimeframe}
+          currencyPair={currencyPair}
+          setCurrencyPair={setCurrencyPair}
+        />
+        <ChartBoardPanel timeframe={timeframe} currencyPair={currencyPair} />
       </div>
     </>
   );

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import ChartComponent from "./ChartComponent";
 import fetchForexData from "./utils/forexApi"; // Assuming you have the API function here
 
-const ChartBoardPanel = ({ timeframe }) => {
+const ChartBoardPanel = ({ currencyPair, timeframe }) => {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchForexData("", timeframe);
+      const data = await fetchForexData(currencyPair, timeframe);
       setChartData(data);
     };
 
     fetchData();
-  }, [timeframe]);
+  }, [currencyPair, timeframe]);
 
   return (
     <div className="chart-board">
