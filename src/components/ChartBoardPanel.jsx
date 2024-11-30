@@ -17,7 +17,7 @@ const ChartBoardPanel = ({ currencyPair, timeframe }) => {
   return (
     <div className="chart-board">
       {chartData.length > 0 ? (
-        <ChartComponent data={chartData} width={1230} height={500} />
+        <ChartComponent data={chartData} width={1230} height={550} />
       ) : (
         <p className="text-center">Loading chart data...</p>
       )}
