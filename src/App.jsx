@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [timeframe, setTimeframe] = useState("1min");
-  const [currencyPair, setCurrencyPair] = useState("EURUSD");
+  const [currencyPair, setCurrencyPair] = useState("USDJPY");
   return (
     <>
       <div className="w-full h-full ">
