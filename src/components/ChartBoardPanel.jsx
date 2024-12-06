@@ -5,6 +5,7 @@ import fetchForexData from "./utils/forexApi"; // Assuming you have the API func
 const ChartBoardPanel = ({ currencyPair, timeframe }) => {
   const [chartData, setChartData] = useState([]);
 
+  //useState starts
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchForexData(currencyPair, timeframe);
@@ -13,6 +14,8 @@ const ChartBoardPanel = ({ currencyPair, timeframe }) => {
 
     fetchData();
   }, [currencyPair, timeframe]);
+
+  // useState ends.
 
   return (
     <div className="chart-board">
